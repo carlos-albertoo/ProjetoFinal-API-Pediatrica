@@ -30,4 +30,4 @@ public class ConsultaController {
     public ResponseEntity<br.com.clinica.pediatrica.models.dtos.ResumoDTO> obterResumo() {
         return ResponseEntity.ok(consultaService.obterResumo());
     }
-}
+}git
