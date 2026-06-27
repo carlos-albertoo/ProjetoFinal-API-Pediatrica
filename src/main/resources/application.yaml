@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: pediatrica
+
+  # ===============================
+  # CONFIGURAÇÃO DO BANCO DE DADOS (MySQL)
+  # ===============================
+  datasource:
+    url: jdbc:mysql://localhost:3306/clinica_pediatrica?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # ===============================
+  # CONFIGURAÇÕES DO JPA / HIBERNATE
+  # ===============================
+  jpa:
+    hibernate:
+      # 'update' cria ou atualiza as tabelas no banco automaticamente
+      ddl-auto: update
+    # Mostra no console do Java os comandos SQL que o Hibernate está executando
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# ===============================
+# CONFIGURAÇÃO DO SERVIDOR (Opcional)
+# ===============================
+server:
+  port: 8080
+
+
