@@ -3,6 +3,7 @@ package br.com.clinica.pediatrica.controllers;
 import br.com.clinica.pediatrica.models.dtos.ConsultaFormDTO;
 import br.com.clinica.pediatrica.models.entities.Consulta;
 import br.com.clinica.pediatrica.services.ConsultaService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement; // <-- NOVO IMPORT
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/consultas")
-@CrossOrigin(origins = "*")
+@SecurityRequirement(name = "bearer-key") // <-- OBRIGA O SWAGGER A ENVIAR O TOKEN
 public class ConsultaController {
 
     private final ConsultaService consultaService;
@@ -21,7 +22,6 @@ public class ConsultaController {
 
     @PostMapping
     public ResponseEntity<Consulta> agendar(@RequestBody @Valid ConsultaFormDTO dto) {
-        // O @Valid faz o Spring acionar aquelas regras (@NotNull, @NotBlank) do seu DTO
         Consulta consultaSalva = consultaService.agendar(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(consultaSalva);
     }
@@ -30,4 +30,4 @@ public class ConsultaController {
     public ResponseEntity<br.com.clinica.pediatrica.models.dtos.ResumoDTO> obterResumo() {
         return ResponseEntity.ok(consultaService.obterResumo());
     }
-}git
+}
