@@ -28,4 +28,11 @@ public class UsuarioService {
 
         repository.save(usuario);
     }
+
+    public void deletar(Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Usuário não encontrado com o ID: " + id);
+        }
+        repository.deleteById(id);
+    }
 }

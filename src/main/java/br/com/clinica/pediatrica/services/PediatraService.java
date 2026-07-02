@@ -16,4 +16,11 @@ public class PediatraService {
         var pediatra = new Pediatra(dados);
         repository.save(pediatra);
     }
+
+    public void deletar(Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Pediatra não encontrado com o ID: " + id);
+        }
+        repository.deleteById(id);
+    }
 }

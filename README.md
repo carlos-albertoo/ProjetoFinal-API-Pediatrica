@@ -60,7 +60,10 @@ Para testar o fluxo completo da aplicação (via Postman ou Swagger), siga esta 
     * `POST /consultas` - Realiza o agendamento cruzando dados de paciente e pediatra.
 5. **Métricas In-Memory (Requer Token)**
     * `GET /consultas/resumo` - Retorna o painel atualizado com o total de consultas.
-
+6. **Exclusão de Registros (Requer Token)**
+    * `DELETE /usuarios/{id}` - Remove um usuário do sistema.
+    * `DELETE /pediatras/{id}` - Remove um médico cadastrado.
+    * `DELETE /pacientes/{id}` - Remove um paciente do sistema.
 ## 🎥 Demonstração (Vídeo)
 
 * **Link do Vídeo no YouTube**: [INSERIR LINK DO VÍDEO AQUI]

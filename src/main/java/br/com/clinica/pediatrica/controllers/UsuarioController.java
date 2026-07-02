@@ -20,4 +20,10 @@ public class UsuarioController {
         service.cadastrar(dados);
         return ResponseEntity.status(HttpStatus.CREATED).build(); // Retorna 201 Created
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletar(@PathVariable Long id) {
+        service.deletar(id);
+        return ResponseEntity.noContent().build();
+    }
 }

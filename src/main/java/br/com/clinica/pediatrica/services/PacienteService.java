@@ -16,4 +16,11 @@ public class PacienteService {
         var paciente = new Paciente(dados);
         repository.save(paciente);
     }
+
+    public void deletar(Long id) {
+        if (!repository.existsById(id)) {
+            throw new RuntimeException("Paciente não encontrado com o ID: " + id);
+        }
+        repository.deleteById(id);
+    }
 }
