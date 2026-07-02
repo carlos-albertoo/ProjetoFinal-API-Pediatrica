@@ -24,4 +24,15 @@ public class Paciente {
     @ManyToOne
     @JoinColumn(name = "responsavel_id")
     private Usuario responsavel;
+
+
+    public Paciente(br.com.clinica.pediatrica.models.dtos.DadosCadastroPacienteDTO dados) {
+        this.nome = dados.nome();
+        this.dataNascimento = dados.dataNascimento();
+
+        // Cria uma referência do usuário apenas com o ID para salvar a chave estrangeira
+        Usuario responsavelRef = new Usuario();
+        responsavelRef.setId(dados.responsavelId());
+        this.responsavel = responsavelRef;
+    }
 }

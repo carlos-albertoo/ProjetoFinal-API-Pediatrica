@@ -22,4 +22,12 @@ public class Pediatra {
     private String crm;
 
     private String especialidade; // Ex: Geral, Neurologia, etc.
+
+
+    public Pediatra(br.com.clinica.pediatrica.models.dtos.DadosCadastroPediatraDTO dados) {
+        this.nome = dados.nome();
+        this.crm = dados.crm();
+        this.especialidade = dados.especialidade();
+
+    }
 }
