@@ -45,6 +45,22 @@ A API utiliza um `GlobalExceptionHandler` (via `@RestControllerAdvice`) para ret
 3. Execute a aplicação via IDE ou comando `./gradlew bootRun`.
 4. Acesse a documentação no navegador: `http://localhost:8080/swagger-ui/index.html`.
 
+## 📍 Principais Rotas e Fluxo de Teste
+
+Para testar o fluxo completo da aplicação (via Postman ou Swagger), siga esta ordem para garantir a autenticação correta:
+
+1. **Cadastro de Usuário (Rota Pública)**
+    * `POST /usuarios` - Cria um novo usuário com nome, e-mail e senha.
+2. **Autenticação (Rota Pública)**
+    * `POST /auth/login` - Retorna o Token JWT (Bearer).
+3. **Cadastros Protegidos (Requer Token)**
+    * `POST /pediatras` - Cadastra um novo médico.
+    * `POST /pacientes` - Cadastra um paciente vinculado ao ID do usuário.
+4. **Transação Principal (Requer Token)**
+    * `POST /consultas` - Realiza o agendamento cruzando dados de paciente e pediatra.
+5. **Métricas In-Memory (Requer Token)**
+    * `GET /consultas/resumo` - Retorna o painel atualizado com o total de consultas.
+
 ## 🎥 Demonstração (Vídeo)
 
 * **Link do Vídeo no YouTube**: [INSERIR LINK DO VÍDEO AQUI]
