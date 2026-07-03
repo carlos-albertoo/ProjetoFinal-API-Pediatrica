@@ -66,7 +66,7 @@ Para testar o fluxo completo da aplicação (via Postman ou Swagger), siga esta 
     * `DELETE /pacientes/{id}` - Remove um paciente do sistema.
 ## 🎥 Demonstração (Vídeo)
 
-* **Link do Vídeo no YouTube**: [INSERIR LINK DO VÍDEO AQUI]
+* **Link do Vídeo no YouTube**: https://www.youtube.com/watch?v=Q-ulSF_0MFA
 
 ---
 *Projeto desenvolvido seguindo rigorosamente as especificações técnicas da disciplina de TÓPICOS AVANÇADOS EM COMPUTAÇÃO.*
